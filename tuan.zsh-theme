@@ -1,12 +1,8 @@
-# Tuan Ho's theme
-#   How to use: add/modify your .zshrc: `ZSH_THEME="tuan"`
-# Shamelessly steal material from robbyrussell's theme
-# Add: 
-#   A new line before the original prompt
-#   A new line after the original prompt
-# Require:
-#   1) A Nerd Font, e.g. Fira Code Nerd Font
-#   2) [Optional] Python hex code: https://www.nerdfonts.com/cheat-sheet  -> search for `python`
+#
+# Tuan's zsh theme
+# Landing page: https://github.com/drNoob13/SimpleZshTheme
+# How to use: refer README
+# Shamelessly steal materials from robbyrussell and ChesterYue
 
 color_reset="%{$reset_color%}"
 
@@ -67,6 +63,5 @@ ZSH_THEME_GIT_PROMPT_SUFFIX="${color_reset} "
 ZSH_THEME_GIT_PROMPT_DIRTY=")%{$fg[red]%}🔥 "
 ZSH_THEME_GIT_PROMPT_CLEAN=")%{$fg[green]%}✔ "
 
-# ZSH_THEME_GIT_PROMPT_CLEAN=") %F{green}%B✔ " # from Dracula
 ZSH_THEME_VIRTUALENV_PREFIX="via "
 ZSH_THEME_VIRTUALENV_SUFFIX="  "
