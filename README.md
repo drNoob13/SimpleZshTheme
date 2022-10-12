@@ -30,3 +30,4 @@ With Python virtualenv prompt
 - robbyrussell and the oh-my-zsh community.
 - ChesterYue for his theme's inspiration.
 - The Nerd Fonts' authors and community.
+- Dracula theme's authors and contributors.
