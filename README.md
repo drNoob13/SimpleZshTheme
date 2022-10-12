@@ -19,4 +19,6 @@ With Python virtualenv prompt
 - [Optional] Dracula theme for your choice of terminal emulator, e.g. tilix, gnome-terminal, etc., and for VSCode (if you also use VSCode). Refer on Dracula theme [website](https://draculatheme.com/) for installation.
 
 ## Credits
-To be filled later.
+- robbyrussell and the oh-my-zsh community.
+- ChesterYue for his theme's inspiration.
+- Nerd Font authors and community.
