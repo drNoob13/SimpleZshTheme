@@ -15,7 +15,7 @@ With Python virtualenv prompt
     ```bash
     # Clone this repo
     cd SimpleZshTheme/
-    ln -s tuan.zsh-theme  ~/.oh-my-zsh/themes
+    ln -s tuan.zsh-theme  ~/.oh-my-zsh/themes/tuan.zsh-theme
     ```
 2. Add/modify your `.zshrc` to add new theme:
     ```bash
