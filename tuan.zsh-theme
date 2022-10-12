@@ -37,7 +37,7 @@ function update_command_status() {
     then
         arrow="%{$fg_bold[yellow]%}❱%{$fg_bold[green]%}❱";
     else
-        arrow="%{$fg_bold[red]%}❱❱❱";
+        arrow="%{$fg_bold[red]%}❱❱";
     fi
     COMMAND_STATUS="${arrow}${reset_font}${color_reset}";
 }
