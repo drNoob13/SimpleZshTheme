@@ -10,6 +10,11 @@ Without Python virtualenv prompt
 With Python virtualenv prompt
 ![img](./img/screenshot_02.jpg)
 
+Note in these screenshots:
+- Terminal emulator: tilix
+- Font: FiraCode Nerd Font Retina
+- Theme for terminal (tilix): Dracula theme
+
 # How to install (with Oh-my-zsh) (Linux)
 1. Link file `tuan.zsh-theme` to `~/.oh-my-zsh/themes/`
     ```bash
@@ -28,6 +33,6 @@ With Python virtualenv prompt
 
 ## Credits
 - robbyrussell and the oh-my-zsh community.
-- ChesterYue for his theme's inspiration.
+- ChesterYue for his theme inspiration.
 - The Nerd Fonts' authors and community.
 - Dracula theme's authors and contributors.
