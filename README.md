@@ -26,9 +26,19 @@ Note in these screenshots:
     ```bash
     ZSH_THEME="tuan" 
     ```
-3. Requirements:
+3. Optional suggestion: enable `git` plugin
+```bash
+    # in your .zshrc
+    plugins=(git
+            python 
+            aliases
+            zsh-autosuggestions
+            # ...
+        )
+```
+4. Requirements:
 - Oh-my-zsh installed in your system ([link](https://github.com/ohmyzsh/ohmyzsh)).
-- A Nerd Font installed in your machine, e.g. Fira Code Nerd Font ([link](https://www.nerdfonts.com/font-downloads)). Choose `FiraCode Nerd Font` in your terminal emulator profile. Do the same in your VSCode editor.font and terminal.font settings if you want to use this theme on your VSCode terminal.
+- A Nerd Font installed in your machine, e.g. Fira Code Nerd Font ([link](https://www.nerdfonts.com/font-downloads)). Choose `FiraCode Nerd Font` in your terminal emulator profile. Do the same in your VSCode editor.font and terminal.font settings if you want to use this theme in your VSCode terminal.
 - [Optional] Dracula theme for your choice of terminal emulator, e.g. tilix, gnome-terminal, etc., and for VSCode (if you also use VSCode). Refer to Dracula theme [website](https://draculatheme.com/) for installation.
 
 ## Credits
