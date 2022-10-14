@@ -1,5 +1,5 @@
 #
-# Tuan's zsh theme
+# Tuan Zsh Theme a.k.a SimpleZshTheme
 # Landing page: https://github.com/drNoob13/SimpleZshTheme
 # How to use: refer README.md
 
