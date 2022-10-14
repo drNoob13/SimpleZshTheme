@@ -50,7 +50,7 @@ function getArrowPromptWithStatus() {
     local font_reset="%{$fg_no_bold[white]%}"
     local arrow_exec_success="%{$fg_bold[yellow]%}❱%{$fg_bold[green]%}❱"
     local arrow_exec_fail="%{$fg_bold[red]%}❱❱"
-    arrow=%(?:${arrow_exec_success}:${arrow_exec_fail})
+    local arrow=%(?:${arrow_exec_success}:${arrow_exec_fail})
     echo "${arrow}${font_reset}${color_reset}"
 }
 
