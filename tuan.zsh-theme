@@ -1,16 +1,34 @@
 #
 # Tuan's zsh theme
 # Landing page: https://github.com/drNoob13/SimpleZshTheme
-# How to use: refer README
-# Shamelessly steal materials from robbyrussell and ChesterYue
+# How to use: refer README.md
 
+#----------------------------------------
+#   G L O B A L S
+#----------------------------------------
 color_reset="%{$reset_color%}"
 
+#----------------------------------------
+#   P L U G I N S
+#----------------------------------------
+# Git
+ZSH_THEME_GIT_PROMPT_PREFIX="  %{$fg_bold[magenta]%}\UE0A0 %{$reset_color%}%{$fg[magenta]%}(" # 
+ZSH_THEME_GIT_PROMPT_SUFFIX="${color_reset} "
+ZSH_THEME_GIT_PROMPT_DIRTY=")%{$fg[red]%}🔥 "
+ZSH_THEME_GIT_PROMPT_CLEAN=")%{$fg[green]%}✔ "
+
+# Mimic virtualenv configs
+VENV_PREFIX="via "
+VENV_SUFFIX="  "
+
+#----------------------------------------
+#  S U B - F U N C T I O N S
+#----------------------------------------
 # Virtual env 
-function getVenvInfo(){
+function getVenvInfo() {
     [[ -n ${VIRTUAL_ENV} ]] || return
     local color="%{$fg_bold[yellow]%}"
-    echo "${color}${ZSH_THEME_VIRTUALENV_PREFIX=[}\UE235${ZSH_THEME_VIRTUALENV_SUFFIX=]}${color_reset} "
+    echo "${color}${VENV_PREFIX}\UE235${VENV_SUFFIX}${color_reset} "
 }
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 
@@ -20,32 +38,21 @@ function getDirectory() {
     echo "${path}${color_reset} "
 }
 
-# Time (copied from: https://github.com/ChesterYue/ohmyzsh-theme-passion/blob/master/passion.zsh-theme) 
+# Time
 function getCurrentTime() {
-    local color="%{$fg_no_bold[cyan]%}";     # color in PROMPT need format in %{XXX%} which is not same with echo
-    local time="($(date +%H:%M))";
+    local color="%{$fg_no_bold[cyan]%}";
+    local time='(%T)'; # %t is AM/PM format
     echo "${color}${time}${color_reset}";
 }
 
-# Command (copied from: https://github.com/ChesterYue/ohmyzsh-theme-passion/blob/master/passion.zsh-theme) 
-function update_command_status() {
-    local arrow="";
-    local reset_font="%{$fg_no_bold[white]%}";
-    COMMAND_RESULT=$1;
-    export COMMAND_RESULT=$COMMAND_RESULT
-    if $COMMAND_RESULT;
-    then
-        arrow="%{$fg_bold[yellow]%}❱%{$fg_bold[green]%}❱";
-    else
-        arrow="%{$fg_bold[red]%}❱❱";
-    fi
-    COMMAND_STATUS="${arrow}${reset_font}${color_reset}";
+# Command status (shamelessly steal the arrow icon from ChesterYue's ohmyzsh-theme-passion)
+function getArrowPromptWithStatus() {
+    local font_reset="%{$fg_no_bold[white]%}"
+    local arrow_exec_success="%{$fg_bold[yellow]%}❱%{$fg_bold[green]%}❱"
+    local arrow_exec_fail="%{$fg_bold[red]%}❱❱"
+    arrow=%(?:${arrow_exec_success}:${arrow_exec_fail})
+    echo "${arrow}${font_reset}${color_reset}"
 }
-update_command_status true;
-function getCommandStatus() {
-    echo "${COMMAND_STATUS}"
-}
-
 
 #----------------------------------------
 #   M A I N
@@ -53,15 +60,5 @@ function getCommandStatus() {
 
 # Colors := Red, Blue, Green, Cyan, Yellow, Magenta, Black & White
 
-PROMPT=$'\n'' $(getDirectory)$(git_prompt_info)'
-PROMPT+='$(getVenvInfo)'
-PROMPT+='$(getCurrentTime)'
-PROMPT+=$'\n'' $(getCommandStatus) '
-
-ZSH_THEME_GIT_PROMPT_PREFIX="  %{$fg_bold[magenta]%}\UE0A0 %{$reset_color%}%{$fg[magenta]%}(" # 
-ZSH_THEME_GIT_PROMPT_SUFFIX="${color_reset} "
-ZSH_THEME_GIT_PROMPT_DIRTY=")%{$fg[red]%}🔥 "
-ZSH_THEME_GIT_PROMPT_CLEAN=")%{$fg[green]%}✔ "
-
-ZSH_THEME_VIRTUALENV_PREFIX="via "
-ZSH_THEME_VIRTUALENV_SUFFIX="  "
+PROMPT=$'\n $(getDirectory)$(git_prompt_info)$(getVenvInfo)$(getCurrentTime)'
+PROMPT+=$'\n $(getArrowPromptWithStatus) '

@@ -10,6 +10,9 @@ Without Python virtualenv prompt
 With Python virtualenv prompt
 ![img](./img/screenshot_02.jpg)
 
+Prompt indicator changes color after executing a non-existing command
+![img](./img/screenshot_03.jpg)
+
 Note in these screenshots:
 - Terminal emulator: tilix
 - Font: FiraCode Nerd Font Retina
