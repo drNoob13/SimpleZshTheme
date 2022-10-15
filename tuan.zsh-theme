@@ -22,7 +22,7 @@ VENV_SUFFIX="  "
 # Virtual env 
 function getVenvInfo() {
     [[ -n ${VIRTUAL_ENV} ]] || return
-    local color="%{$fg_bold[yellow]%}"
+    local color="%{$fg_no_bold[yellow]%}"
     echo "${color}${VENV_PREFIX}\UE235${VENV_SUFFIX}${reset_color} "
 }
 export VIRTUAL_ENV_DISABLE_PROMPT=1
@@ -36,7 +36,7 @@ function getDirectory() {
 # Time
 function getCurrentTime() {
     local color="%{$fg_no_bold[cyan]%}";
-    local time='(%T)'; # %t is AM/PM format
+    local time='(%t)'; # %t is AM/PM format
     echo "${color}${time}${reset_color}";
 }
 
