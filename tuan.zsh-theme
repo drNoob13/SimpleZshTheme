@@ -7,10 +7,10 @@
 #   P L U G I N S
 #----------------------------------------
 # Git
-ZSH_THEME_GIT_PROMPT_PREFIX="  %{$fg_bold[magenta]%}\UE0A0 %{$reset_color%}%{$fg[magenta]%}(" # 
+ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[magenta]%}\UE0A0 ${reset_color}%{$fg[magenta]%}(" # 
 ZSH_THEME_GIT_PROMPT_SUFFIX="${reset_color} "
-ZSH_THEME_GIT_PROMPT_DIRTY=")%{$fg[red]%}🔥 "
-ZSH_THEME_GIT_PROMPT_CLEAN=")%{$fg[green]%}✔ "
+ZSH_THEME_GIT_PROMPT_DIRTY=")%{$fg[red]%} 🔥 "
+ZSH_THEME_GIT_PROMPT_CLEAN=")%{$fg[green]%} "
 
 # Mimic virtualenv configs
 VENV_PREFIX="via "
@@ -29,8 +29,9 @@ export VIRTUAL_ENV_DISABLE_PROMPT=1
 
 # Directory prompt (2 levels)
 function getDirectory() {
-    local path="%{$fg_bold[cyan]%}%2~" # '%2~' means 2 levels (current+parent) and if curr = $HOME, display '~'
-    echo "${path}${reset_color} "
+    # local path="%{$fg_bold[cyan]%}%2~" # '%2~' means 2 levels (current+parent) and if curr = $HOME, display '~'
+    local path="%{$fg[cyan]%}%2~" # '%2~' means 2 levels (current+parent) and if curr = $HOME, display '~'
+    echo "${path}${reset_color}  "
 }
 
 # Time
