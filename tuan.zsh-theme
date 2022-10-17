@@ -9,8 +9,8 @@
 # Git
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[magenta]%}\UE0A0 ${reset_color}%{$fg[magenta]%}(" # 
 ZSH_THEME_GIT_PROMPT_SUFFIX="${reset_color} "
-ZSH_THEME_GIT_PROMPT_DIRTY=")%{$fg[red]%} 🔥 "
-ZSH_THEME_GIT_PROMPT_CLEAN=")%{$fg[green]%} "
+ZSH_THEME_GIT_PROMPT_DIRTY=")%{$fg[red]%}🔥 "
+ZSH_THEME_GIT_PROMPT_CLEAN=") "
 
 # Mimic virtualenv configs
 VENV_PREFIX="via "
@@ -29,16 +29,16 @@ export VIRTUAL_ENV_DISABLE_PROMPT=1
 
 # Directory prompt (2 levels)
 function getDirectory() {
-    # local path="%{$fg_bold[cyan]%}%2~" # '%2~' means 2 levels (current+parent) and if curr = $HOME, display '~'
-    local path="%{$fg[cyan]%}%2~" # '%2~' means 2 levels (current+parent) and if curr = $HOME, display '~'
+    local path="%{$fg[cyan]%}%2~" # '%2~' means 2 levels (current+parent)
     echo "${path}${reset_color}  "
 }
 
 # Time
 function getCurrentTime() {
-    local color="%{$fg_no_bold[cyan]%}";
-    local time='(%t)'; # %t is AM/PM format
-    echo "${color}${time}${reset_color}";
+    local prefix="at "
+    local color="%{$fg_no_bold[cyan]%}"
+    local time='%T' # %t is AM/PM format
+    echo "${prefix}${color}${time}${reset_color}"
 }
 
 # Command status (shamelessly steal the arrow icon from ChesterYue's ohmyzsh-theme-passion)
