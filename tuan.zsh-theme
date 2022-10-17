@@ -2,6 +2,7 @@
 # Tuan Zsh Theme a.k.a SimpleZshTheme
 # Landing page: https://github.com/drNoob13/SimpleZshTheme
 # How to use: refer README.md
+# asdfsdf
 
 #----------------------------------------
 #   P L U G I N S
@@ -9,7 +10,7 @@
 # Git
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[magenta]%}\UE0A0 ${reset_color}%{$fg[magenta]%}(" # 
 ZSH_THEME_GIT_PROMPT_SUFFIX="${reset_color} "
-ZSH_THEME_GIT_PROMPT_DIRTY=")%{$fg[red]%}🔥 "
+ZSH_THEME_GIT_PROMPT_DIRTY=")%{$fg[red]%} 🔥 "
 ZSH_THEME_GIT_PROMPT_CLEAN=") "
 
 # Mimic virtualenv configs

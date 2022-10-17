@@ -1,17 +1,14 @@
 # Tuan.zsh-theme
 A simple zsh theme for ***oh-my-zsh***, a.k.a `tuan` theme for short.
 
-This dark theme favors visual clarity and minimalism while is still easy on the eyes and provides a certain amount of necessary information for developers, esp. those who uses Python virtualenv.
+This dark theme favors visual clarity while is still easy on the eyes and provides a minimum amount of necessary information for developers, esp. those who uses Python virtualenv.
 
 ## Screenshots
-Without Python virtualenv prompt
+With virtualenv prompt:
 ![img](./img/screenshot_01.jpg)
 
-With Python virtualenv prompt
+Prompt arrow changes color after executing an invalid command
 ![img](./img/screenshot_02.jpg)
-
-Prompt indicator changes color after executing a nonexistent command
-![img](./img/screenshot_03.jpg)
 
 ## Features 
 
@@ -35,9 +32,9 @@ For those who want to replicate exactly the shell appearance in above screenshot
 0. Set up your [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh).
 1. Link file `tuan.zsh-theme` to `~/.oh-my-zsh/themes/`
     ```bash
-    # Clone this repo
-    cd SimpleZshTheme/
-    ln -s tuan.zsh-theme  ~/.oh-my-zsh/themes/tuan.zsh-theme
+    # Clone this repo to <dir>/SimpleZshTheme
+    cd ~/.oh-my-zsh/themes/  # goto oh-my-zsh theme dir
+    ln -s <dir>/SimpleZshTheme/tuan.zsh-theme  .  # sym link
     ```
 2. Add/modify your `.zshrc` to add new theme:
     ```bash
