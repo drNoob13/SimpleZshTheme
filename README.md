@@ -18,7 +18,7 @@ Prompt indicator changes color after executing a nonexistent command
 - **Directory**: show current and parent directory up to 1 level. Auto shorten when traversing any directory tree.
 - **Git status**: 
     - 🔥 means there is uncommitted change in the current (git) directory. If you use `oh-my-zsh`, git status is evaluated by the [git_prompt_info()](https://github.com/ohmyzsh/ohmyzsh/blob/d87ab251c7fe18626b2d0c4e4a184e7bed7c508b/lib/git.zsh) sub function, which calls the `git status --porcelain` plus other conditioned flags.
-    - It is possible to ignore untracked files (so that it shows ✔ instead of 🔥) by enabling the following line in your `.zshrc`: 
+    - It is possible to ignore untracked files (so that it won't show 🔥) by enabling the following line in your `.zshrc`: 
         ```zsh
         DISABLE_UNTRACKED_FILES_DIRTY="true"
         ```
