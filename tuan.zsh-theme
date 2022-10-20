@@ -11,9 +11,6 @@ color_reset="%{$reset_color%}";
 #   P L U G I N S
 #----------------------------------------
 # Git
-# ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[magenta]%}\UE0A0 ${color_reset}%{$fg[magenta]%}(" # 
-# ZSH_THEME_GIT_PROMPT_SUFFIX="${color_reset} "
-# ZSH_THEME_GIT_PROMPT_DIRTY=")%{$fg[red]%} 🔥 "
 ZSH_THEME_GIT_PROMPT_PREFIX="%B%F{magenta}\UE0A0 ${color_reset}%F{magenta}(" # 
 ZSH_THEME_GIT_PROMPT_SUFFIX="${color_reset} "
 ZSH_THEME_GIT_PROMPT_DIRTY=")%F{red} 🔥 "
@@ -49,7 +46,9 @@ function getCurrentTime() {
     echo "${prefix}${color}${time}${color_reset}"
 }
 
-# Issue: command tab completion duplicates the prompt: https://stackoverflow.com/questions/11916064/zsh-tab-completion-duplicating-command-name
+# (Fixed) Issue: command tab completion duplicates the prompt: 
+#   https://stackoverflow.com/questions/11916064/zsh-tab-completion-duplicating-command-name
+#   https://stackoverflow.com/questions/7957435/zsh-auto-complete-screws-up-command-name/10644062#10644062
 
 # Command status (shamelessly steal the arrow icon from ChesterYue's ohmyzsh-theme-passion)
 function getArrowPromptWithStatus() {
