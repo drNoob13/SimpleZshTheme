@@ -12,7 +12,6 @@ color_minor="%F{245}"
 #   P L U G I N S
 #----------------------------------------
 # Git
-# ZSH_THEME_GIT_PROMPT_PREFIX="%F{magenta} %F{189} ${color_reset}%F{176}" #  \UE0A0      
 ZSH_THEME_GIT_PROMPT_PREFIX="%F{243} %F{248} ${color_reset}%F{176}" #  \UE0A0      
 ZSH_THEME_GIT_PROMPT_SUFFIX="${color_reset} "
 ZSH_THEME_GIT_PROMPT_DIRTY=" 🔥 "
@@ -25,7 +24,7 @@ VENV_SUFFIX="  "
 #----------------------------------------
 #  S U B - F U N C T I O N S
 #----------------------------------------
-
+  
 # Virtual env 
 function getVenvInfo() {
     [[ -n ${VIRTUAL_ENV} ]] || return
@@ -37,15 +36,13 @@ export VIRTUAL_ENV_DISABLE_PROMPT=1
 # Directory prompt (2 levels)
 function getDirectory() {
     # '%2~' means 2 levels (current+parent)
-    # local path="%F{cyan}%2~"
-    local path="%F{006}%2~"  # 116, 117=~cyan
+    local path="%F{cyan}%2~"
     echo "${path}${color_reset}  "
 }
 
 # Time
 function getCurrentTime() {
     local prefix="at "
-    # local color="%F{cyan}"
     local color="%F{110}" # 007
     local time='%T' # %t is AM/PM format
     echo "${color_minor}${prefix}${color}${time}${color_reset}"
