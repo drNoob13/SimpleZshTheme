@@ -8,8 +8,8 @@
 #   P L U G I N S
 #----------------------------------------
 # Git
-ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[magenta]%}\UE0A0 ${reset_color}%{$fg[magenta]%}(" # 
-ZSH_THEME_GIT_PROMPT_SUFFIX="${reset_color} "
+ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[magenta]%}\UE0A0 ${color_reset}%{$fg[magenta]%}(" # 
+ZSH_THEME_GIT_PROMPT_SUFFIX="${color_reset} "
 ZSH_THEME_GIT_PROMPT_DIRTY=")%{$fg[red]%} 🔥 "
 ZSH_THEME_GIT_PROMPT_CLEAN=") "
 
@@ -20,18 +20,21 @@ VENV_SUFFIX="  "
 #----------------------------------------
 #  S U B - F U N C T I O N S
 #----------------------------------------
+# Global
+color_reset="%{$reset_color%}";
+
 # Virtual env 
 function getVenvInfo() {
     [[ -n ${VIRTUAL_ENV} ]] || return
     local color="%{$fg_no_bold[yellow]%}"
-    echo "${color}${VENV_PREFIX}\UE235${VENV_SUFFIX}${reset_color} "
+    echo "${color}${VENV_PREFIX}\UE235${VENV_SUFFIX}${color_reset} "
 }
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 
 # Directory prompt (2 levels)
 function getDirectory() {
     local path="%{$fg[cyan]%}%2~" # '%2~' means 2 levels (current+parent)
-    echo "${path}${reset_color}  "
+    echo "${path}${color_reset}  "
 }
 
 # Time
@@ -39,16 +42,18 @@ function getCurrentTime() {
     local prefix="at "
     local color="%{$fg_no_bold[cyan]%}"
     local time='%T' # %t is AM/PM format
-    echo "${prefix}${color}${time}${reset_color}"
+    echo "${prefix}${color}${time}${color_reset}"
 }
+
+# Issue: command tab completion duplicates the prompt: https://stackoverflow.com/questions/11916064/zsh-tab-completion-duplicating-command-name
 
 # Command status (shamelessly steal the arrow icon from ChesterYue's ohmyzsh-theme-passion)
 function getArrowPromptWithStatus() {
-    local font_reset="%{$fg_no_bold[white]%}"
-    local arrow_exec_success="%{$fg_bold[yellow]%}❱%{$fg_bold[green]%}❱"
-    local arrow_exec_fail="%{$fg_bold[red]%}❱❱"
+    local font_reset="%F{white}"
+    local arrow_exec_success="%F{yellow}❱%F{green}❱"
+    local arrow_exec_fail="%F{red}❱❱"
     local arrow=%(?:${arrow_exec_success}:${arrow_exec_fail})
-    echo "${arrow}${font_reset}${reset_color}"
+    echo "${arrow}${font_reset}${color_reset}"
 }
 
 #----------------------------------------
