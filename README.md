@@ -75,10 +75,6 @@ For those who want to replicate exactly the shell appearance in above screenshot
     - Do the same in your VSCode `editor.font` and `terminal.font` settings if you want to use this theme in your VSCode terminal.
 - [Optional] Dracula theme for your choice of terminal emulator, e.g. tilix, gnome-terminal, etc., and for VSCode (if you also use VSCode). Refer to Dracula theme [website](https://draculatheme.com/) for installation.
 
-## Notes on Using
-1) On autocomplete        
-2) On `zsh-syntax-highlighting`: need 
-
 ## Credits
 - robbyrussell and the oh-my-zsh community.
 - ChesterYue for his theme-icon inspiration.
