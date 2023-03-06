@@ -35,8 +35,8 @@ export VIRTUAL_ENV_DISABLE_PROMPT=1
 
 # Directory prompt (2 levels)
 function getDirectory() {
-    # '%2~' means 2 levels (current+parent)
-    local path="%F{cyan}%2~"
+    # '%3~' means showing 3 levels (current+parents up to 2 levels)
+    local path="%F{cyan}%3~"
     echo "${path}${color_reset} "
 }
 
