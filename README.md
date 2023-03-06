@@ -4,7 +4,6 @@ A simple zsh theme for ***oh-my-zsh***, a.k.a `tuan` theme for short.
 This dark theme favors visual clarity while is still easy on the eyes and provides a minimum amount of necessary information for developers, esp. those who uses Python virtualenv.
 
 ## Screenshots
-Prompt arrow changes color after executing an invalid command
 ![img](./img/screenshot_02.jpg)
 
 ## Features 
